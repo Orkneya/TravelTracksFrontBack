@@ -1,11 +1,14 @@
 import { useNavigate } from "react-router-dom";
+import styles from "./Banner.module.css";
 
 export default function Banner() {
   const navigate = useNavigate();
   return (
-    <section>
+    <section className={styles.section}>
       <h1>Campers of your dreams</h1>
-      <p>You can find everything you want in our catalog</p>
+      <p className={styles.comment}>
+        You can find everything you want in our catalog
+      </p>
       <button onClick={() => navigate("/catalog")}>View Now</button>
     </section>
   );

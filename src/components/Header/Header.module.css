@@ -1,0 +1,31 @@
+.header {
+  display: flex;
+  justify-content: space-between; /* логотип слева, меню справа */
+  align-items: center;
+  padding: 20px 40px;
+  background-color: white;
+  border-bottom: 1px solid var(--gray-light);
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--main);
+  cursor: default;
+}
+
+.nav {
+  display: flex;
+  gap: 32px;
+}
+
+.link {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--main);
+  text-decoration: none;
+}
+
+.active {
+  color: var(--button);
+}

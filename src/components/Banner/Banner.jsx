@@ -9,7 +9,9 @@ export default function Banner() {
       <p className={styles.comment}>
         You can find everything you want in our catalog
       </p>
-      <button onClick={() => navigate("/catalog")}>View Now</button>
+      <button className={`button`} onClick={() => navigate("/catalog")}>
+        View Now
+      </button>
     </section>
   );
 }

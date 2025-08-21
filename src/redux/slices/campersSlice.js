@@ -1,9 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import {
-  fetchCampers,
-  fetchCamper,
-  // fetchCampersByOwner,
-} from "../operations/campersOperations.js";
+import { fetchCampers, fetchCamper } from "../operations/campersOperations.js";
 
 const handlePending = (state) => {
   state.isLoading = true;
@@ -19,7 +15,6 @@ const slice = createSlice({
   name: "campers",
   initialState: {
     items: [],
-    // byOwner: {},
     currentCamper: null,
     isLoading: false,
     error: null,
@@ -51,11 +46,11 @@ const slice = createSlice({
 
         state.page = action.meta.arg.page;
         if (state.page === 1) {
-          state.items = action.payload;
+          state.items = action.payload.items;
         } else {
-          state.items = [...state.items, ...action.payload];
+          state.items = [...state.items, ...action.payload.items];
         }
-        state.hasMore = action.payload.length >= state.limit;
+        state.hasMore = state.items.length < action.payload.total;
       })
       .addCase(fetchCampers.rejected, handleRejected)
 
@@ -66,16 +61,6 @@ const slice = createSlice({
         state.currentCamper = action.payload;
       })
       .addCase(fetchCamper.rejected, handleRejected);
-
-    // .addCase(fetchCampersByOwner.pending, handlePending)
-    // .addCase(fetchCampersByOwner.fulfilled, (state, action) => {
-    //   const { ownerId, campers } = action.payload;
-    //   state.byOwner[ownerId] = {
-    //     items: campers,
-    //     status: "succeeded",
-    //   };
-    // })
-    // .addCase(fetchCampersByOwner.rejected, handleRejected)
   },
 });
 

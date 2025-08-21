@@ -1,7 +1,20 @@
-import React from "react";
+import { useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
+import { selectCamper } from "../../redux/selectors/campersSelector.js";
 
-const DetailsPage = () => {
-  return <div>DetailsPage</div>;
-};
+export default function DetailsPage() {
+  const { id } = useParams();
+  const camper = useSelector(selectCamper);
 
-export default DetailsPage;
+  if (!camper || camper.id !== id) {
+    return <p>Camper not found</p>;
+  }
+
+  return (
+    <div>
+      <h1>{camper.name}</h1>
+      <p>{camper.description}</p>
+      <p>Price: €{camper.price}</p>
+    </div>
+  );
+}

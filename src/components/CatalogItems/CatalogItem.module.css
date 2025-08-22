@@ -40,25 +40,33 @@
 }
 
 .meta {
-  font-size: 14px;
-  color: var(--gray);
-  margin: 8px 0;
   display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: row;
   gap: 16px;
+  width: 267px;
+  height: 24px;
+  font-size: 14px;
+  color: #f2f4f7;
+  margin: 8px 0;
 }
 
 .description {
   font-size: 14px;
-  color: var(--text);
+  color: #475467;
   margin: 12px 0;
 }
 
-/* .features {
+.features {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
   margin-bottom: 16px;
-} */
+  border-radius: 100px;
+  padding: 12px 18px;
+  height: 48px;
+}
 
 .badge {
   padding: 6px 12px;

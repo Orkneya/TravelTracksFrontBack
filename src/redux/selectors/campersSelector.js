@@ -1,5 +1,3 @@
-// import { createSelector } from "@reduxjs/toolkit";
-
 export const selectCampers = (state) => state.campers.items;
 export const selectCamper = (state) => state.campers.currentCamper;
 export const selectLoading = (state) => state.campers.isLoading;

@@ -23,13 +23,20 @@ export default function CatalogItem({ camper }) {
           <span>{camper.location}</span>
         </div>
         <p className={styles.description}>{camper.description}</p>
-        {/* <div className={styles.features}>
-          {camper.equipment.map((eq) => (
-            <span key={eq} className={styles.badge}>
-              {eq}
-            </span>
-          ))}
-        </div> */}
+        <div className={styles.features}>
+          {[
+            camper.transmission,
+            camper.kitchen && "Kitchen",
+            camper.AC && "AC",
+            camper.engine,
+          ]
+            .filter(Boolean)
+            .map((eq) => (
+              <span key={eq} className={styles.badge}>
+                {eq}
+              </span>
+            ))}
+        </div>
         <Link
           to={`/catalog/${camper.id}`}
           className={`button ${styles.details}`}

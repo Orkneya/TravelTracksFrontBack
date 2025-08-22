@@ -6,8 +6,10 @@ import {
   selectLoading,
   selectError,
 } from "../../redux/selectors/campersSelector.js";
+
 import { fetchCamper } from "../../redux/operations/campersOperations.js";
 import Loader from "../../components/Loader/Loader.jsx";
+import styles from "./DetailsPage.module.css";
 
 export default function DetailsPage() {
   const { id } = useParams();
@@ -27,10 +29,65 @@ export default function DetailsPage() {
   if (!camper) return <p>Camper not found</p>;
 
   return (
-    <div>
-      <h1>{camper.name}</h1>
-      <p>{camper.description}</p>
-      <p>Price: €{camper.price}</p>
+    <div className={styles.wrapper}>
+      <div className={styles.left}>
+        <h1>{camper.name}</h1>
+
+        <div className={styles.gallery}>
+          {camper.gallery.map((img, i) => (
+            <img key={i} src={img.thumb} alt={camper.name} />
+          ))}
+        </div>
+
+        <p className={styles.description}>{camper.description}</p>
+
+        <div className={styles.features}>
+          {[
+            camper.transmission && camper.transmission,
+            camper.AC && "AC",
+            camper.engine,
+            camper.kitchen && "Kitchen",
+            camper.bathroom && "Bathroom",
+            camper.TV && "TV",
+            camper.radio && "Radio",
+            camper.refrigerator && "Refrigerator",
+            camper.microwave && "Microwave",
+            camper.gas && "Gas",
+            camper.water && "Water",
+          ]
+            .filter(Boolean)
+            .map((eq) => (
+              <span key={eq} className={styles.badge}>
+                {eq}
+              </span>
+            ))}
+        </div>
+
+        <div className={styles.details}>
+          <h3>Vehicle details</h3>
+          <ul>
+            <li>Form: {camper.form}</li>
+            <li>Length: {camper.length}</li>
+            <li>Width: {camper.width}</li>
+            <li>Height: {camper.height}</li>
+            <li>Tank: {camper.tank}</li>
+            <li>Consumption: {camper.consumption}</li>
+          </ul>
+        </div>
+      </div>
+
+      <div className={styles.right}>
+        <h3>Book your campervan now</h3>
+        <form className={styles.form}>
+          <input type="text" placeholder="Name" />
+          <input type="email" placeholder="Email" />
+          <input type="date" placeholder="Booking date" />
+          <textarea placeholder="Comment"></textarea>
+          <button className={`button ${styles.send}`} type="submit">
+            Send
+          </button>
+        </form>
+      </div>
     </div>
   );
 }

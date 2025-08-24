@@ -1,0 +1,19 @@
+.panel {
+  background: #f8f8f8;
+  padding: 16px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.resetBtn {
+  width: 166px;
+  height: 56px;
+}

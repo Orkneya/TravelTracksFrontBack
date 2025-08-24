@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import styles from "./CatalogItem.module.css";
 
 export default function CatalogItem({ camper }) {
-  console.log(camper.equipment);
   return (
     <div className={styles.card}>
       <img

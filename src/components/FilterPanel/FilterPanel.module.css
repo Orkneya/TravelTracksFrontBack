@@ -1,10 +1,29 @@
 .panel {
-  background: #f8f8f8;
   padding: 16px;
   border-radius: 12px;
   display: flex;
   flex-direction: column;
   gap: 16px;
+}
+
+.location {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--gray);
+}
+
+.filter {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+h4 {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
 }
 
 .group {
@@ -16,4 +35,66 @@
 .resetBtn {
   width: 166px;
   height: 56px;
+}
+
+.searchBtn {
+  width: 166px;
+  height: 56px;
+  padding-bottom: 20px;
+}
+.locInput {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  border-radius: 12px;
+  padding: 0 16px;
+  /* padding: 18px 218px 18px 20px; */
+  width: 100%;
+  height: 56px;
+  background: var(--inputs);
+}
+
+.tag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 8px;
+  border: 1px solid var(--gray-light);
+  border-radius: 10px;
+  padding: 16px 32px;
+  /* flex: 1 1 30%;
+  min-width: 100px;
+  height: 96px; */
+  width: 112px;
+  height: 96px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  text-align: center;
+  color: var(--main);
+}
+
+.typeList {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.activeTag {
+  border: 2px solid var(--main);
+  background-color: var(--inputs);
+}
+
+.btnRow {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 12px;
 }

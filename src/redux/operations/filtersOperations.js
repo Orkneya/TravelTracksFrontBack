@@ -11,10 +11,7 @@ export const fetchFilteredCampers = createAsyncThunk(
         page: filters.page,
         limit: filters.limit,
         location: filters.location || undefined,
-        type: filters.type || undefined,
-        // equipment: filters.equipment?.length
-        //   ? filters.equipment.join(",")
-        //   : undefined,
+        form: filters.form || undefined,
       };
       if (filters.equipment?.length) {
         filters.equipment.forEach((eq) => {

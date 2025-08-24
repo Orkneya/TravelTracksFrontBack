@@ -1,15 +1,20 @@
 .header {
   display: flex;
   align-items: center;
-  padding: 20px 40px;
-  background-color: white;
-  border-bottom: 1px solid var(--gray-light);
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 450px;
+  border-bottom: 1px solid var(--badges);
+  padding: 24px 64px;
+  width: 1440px;
+  height: 72px;
+  background: var(--inputs);
 }
 
 .logo {
   font-size: 20px;
   font-weight: 700;
-  color: var(--main);
+  color: var(--text);
   cursor: default;
 }
 
@@ -20,12 +25,13 @@
 }
 
 .link {
-  font-size: 18px;
   font-weight: 500;
-  color: var(--main);
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
   text-decoration: none;
 }
 
 .active {
-  color: var(--button);
+  color: var(--button-hover);
 }

@@ -63,9 +63,9 @@ h4 {
   gap: 8px;
   border: 1px solid var(--gray-light);
   border-radius: 10px;
-  padding: 16px 32px;
-  width: 112px;
-  height: 96px;
+  padding: 10px 22px;
+  width: 66px;
+  height: 50px;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
@@ -79,7 +79,6 @@ h4 {
   align-items: flex-end;
   justify-content: flex-start;
   flex-direction: row;
-  flex-wrap: wrap;
   gap: 12px;
 }
 

@@ -125,7 +125,7 @@ export default function FilterPanel() {
             Search
           </button>
           <button onClick={handleReset} className={`button ${styles.resetBtn}`}>
-            Reset
+            Reset search
           </button>
         </div>
       </div>

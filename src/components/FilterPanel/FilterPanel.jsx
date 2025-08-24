@@ -16,9 +16,9 @@ export default function FilterPanel() {
     dispatch(setFilter({ equipment: newEquipment }));
   };
 
-  const handleTypeChange = (e) => {
-    dispatch(setFilter({ type: e.target.value }));
-  };
+  // const handleTypeChange = (e) => {
+  //   dispatch(setFilter({ type: e.target.value }));
+  // };
 
   const handleReset = () => {
     dispatch(resetFilters());
@@ -59,7 +59,7 @@ export default function FilterPanel() {
         </label>
       </div>
 
-      <div className={styles.group}>
+      {/* <div className={styles.group}>
         <h4>Vehicle type</h4>
         <select value={filters.type || ""} onChange={handleTypeChange}>
           <option value="">Any</option>
@@ -67,7 +67,7 @@ export default function FilterPanel() {
           <option value="rv">RV</option>
           <option value="caravan">Caravan</option>
         </select>
-      </div>
+      </div> */}
 
       <button onClick={handleReset} className={`button ${styles.resetBtn}`}>
         Search

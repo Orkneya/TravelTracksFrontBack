@@ -1,12 +1,63 @@
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# TravelTrucks 🚐
 
-Currently, two official plugins are available:
+**TravelTrucks** is a frontend application for a camper rental company.  
+The project allows users to browse available campers, filter them by different criteria, add favorites, and book a camper online.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Live Demo: [travel-tracks-front-back.vercel.app](https://travel-tracks-front-back.vercel.app)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## ✨ Features
+
+- **Home Page**:  
+  Welcome banner with a call-to-action to explore the catalog.
+
+- **Catalog Page**:
+
+  - Displays a list of available campers.
+  - Filtering by location, vehicle type, and equipment (AC, kitchen, bathroom, etc.).
+  - Add campers to **Favorites** (saved in local storage).
+  - Pagination with "Load More" functionality.
+  - Price formatting (e.g. `8000.00`).
+
+- **Camper Details Page**:
+  - Detailed description with gallery.
+  - Camper specifications: transmission, engine, AC, bathroom, kitchen, TV, radio, refrigerator, microwave, gas, water.
+  - Vehicle details: form, length, width, height, tank, consumption.
+  - User reviews with 5-star rating system.
+  - Booking form with success notification.
+
+---
+
+## 🛠️ Tech Stack
+
+- **React + Vite** – frontend framework and bundler
+- **Redux Toolkit** – state management
+- **React Router** – navigation
+- **Axios** – API requests
+- **CSS Modules** – component styling
+
+---
+
+## 📡 API
+
+The app uses a ready backend:  
+[https://66b1f8e71ca8ad33d4f5f63e.mockapi.io/campers](https://66b1f8e71ca8ad33d4f5f63e.mockapi.io/campers)
+
+- `GET /campers` – fetch all campers (with backend-side filtering)
+- `GET /campers/:id` – fetch camper details
+
+---
+
+## 🚀 Getting Started
+
+Clone the repository and install dependencies:
+
+```bash
+git clone https://github.com/Orkneya/travel-trucks.git
+cd travel-trucks
+npm install
+
+```

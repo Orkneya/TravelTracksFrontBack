@@ -102,7 +102,7 @@ export default function DetailsPage() {
             <form className={styles.form}>
               <input type="text" placeholder="Name" />
               <input type="email" placeholder="Email" />
-              <input type="date" placeholder="Booking date" />
+              <input type="text" placeholder="Booking date" />
               <textarea placeholder="Comment"></textarea>
               <button className={`button ${styles.send}`} type="submit">
                 Send

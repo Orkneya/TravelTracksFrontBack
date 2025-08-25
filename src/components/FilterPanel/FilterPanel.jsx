@@ -78,6 +78,15 @@ export default function FilterPanel() {
         <label>
           <input
             type="checkbox"
+            value="TV"
+            checked={localFilters.equipment.includes("TV")}
+            onChange={handleEquipmentChange}
+          />
+          TV
+        </label>
+        <label>
+          <input
+            type="checkbox"
             value="bathroom"
             checked={localFilters.equipment.includes("bathroom")}
             onChange={handleEquipmentChange}

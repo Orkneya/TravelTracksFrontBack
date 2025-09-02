@@ -9,7 +9,7 @@ export default function FilterPanel() {
   const dispatch = useDispatch();
   const filters = useSelector(selectFilters);
 
-  const [localFilters, setLocalFilters] = useState(filters);
+  const [localFilters, setLocalFilters] = useState(() => filters);
 
   const handleEquipmentChange = (e) => {
     const { value, checked } = e.target;
@@ -20,22 +20,37 @@ export default function FilterPanel() {
     setLocalFilters({ ...localFilters, equipment: newEquipment });
   };
 
+  const handleSearch = () => {
+    dispatch(setFilter(localFilters));
+    dispatch(fetchFilteredCampers(localFilters))
+      .unwrap()
+      .catch((err) => {
+        if (err.status === 404) {
+          alert("Неправильний ввід локації");
+        } else {
+          alert("Помилка: " + err);
+        }
+      });
+  };
+
   const handleTypeChange = (type) => {
     setLocalFilters({ ...localFilters, form: type });
   };
 
-  const handleSearch = () => {
-    dispatch(setFilter(localFilters));
-    dispatch(fetchFilteredCampers());
-  };
+  // const handleReset = () => {
+  //   setLocalFilters({
+  //     location: "",
+  //     equipment: [],
+  //     form: "",
+  //   });
+  //   dispatch(resetFilters());
+  // };
 
   const handleReset = () => {
-    setLocalFilters({
-      location: "",
-      equipment: [],
-      form: "",
-    });
+    const cleared = { location: "", equipment: [], form: "" };
+    setLocalFilters(cleared);
     dispatch(resetFilters());
+    dispatch(fetchFilteredCampers(cleared));
   };
 
   return (

@@ -26,7 +26,8 @@ export const fetchFilteredCampers = createAsyncThunk(
         total: response.data.total,
       };
     } catch (e) {
-      return rejectWithValue(e.message);
+      // return rejectWithValue(e.message);
+      return rejectWithValue(e.response?.status || e.message);
     }
   }
 );

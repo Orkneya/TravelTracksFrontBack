@@ -1,6 +1,7 @@
 import "./index.css";
 import React, { StrictMode } from "react";
 import App from "./App.jsx";
+import "normalize.css";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import { persistor, store } from "./redux/store.js";
